@@ -5,6 +5,8 @@ const Button = ({
   onClick,
   variant = "primary",
   className = "",
+  type = "button",
+  showIcon = true,
 }) => {
   const variants = {
     primary:
@@ -22,12 +24,13 @@ const Button = ({
 
   return (
     <button
+      type={type}
       onClick={onClick}
-      className={`flex items-center justify-center gap-2 rounded-xl px-6 py-3 font-bold transition ${variants[variant]} ${className}`}
+      className={`flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold transition ${variants[variant]} ${className}`}
     >
       {children}
 
-      <ArrowRight size={17} />
+      {showIcon && <ArrowRight size={17} />}
     </button>
   );
 };

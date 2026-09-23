@@ -12,10 +12,10 @@ const Applications = () => {
   return (
     <section
       id="applications"
-      className="scroll-mt-0 bg-white py-24"
+      className="scroll-mt-0 bg-white py-16 sm:py-20"
     >
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid gap-14 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10">
+        <div className="grid gap-10 sm:gap-14 lg:grid-cols-2">
 
           {/* Content */}
           <div>
@@ -27,7 +27,7 @@ const Applications = () => {
 
             <button
               onClick={() => scrollTo("contact")}
-              className="mt-8 flex items-center gap-2 font-bold text-blue-700"
+              className="mt-6 sm:mt-8 flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base font-bold text-blue-700 transition hover:bg-blue-100"
             >
               Discuss your requirement
               <ChevronRight size={18} />
@@ -35,14 +35,14 @@ const Applications = () => {
           </div>
 
           {/* Cards */}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
             {applications.map((application, index) => (
               <div
                 key={application}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-blue-200 hover:shadow-lg"
+                className="group rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm transition hover:border-blue-200 hover:shadow-lg"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 font-black text-blue-700">
+                  <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-blue-50 text-xs sm:text-sm font-black text-blue-700">
                     0{index + 1}
                   </div>
 
@@ -52,7 +52,7 @@ const Applications = () => {
                   />
                 </div>
 
-                <h3 className="mt-6 font-bold text-slate-800">
+                <h3 className="mt-4 sm:mt-6 text-sm sm:text-base font-bold text-slate-800">
                   {application}
                 </h3>
               </div>

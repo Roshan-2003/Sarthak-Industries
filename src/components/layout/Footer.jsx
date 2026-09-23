@@ -40,136 +40,97 @@ const Footer = () => {
     <footer className="bg-white text-slate-900 border-t border-slate-200">
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
 
           {/* Company */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-11 h-11 rounded-xl bg-blue-700 flex items-center justify-center">
-                <Factory className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3 mb-4 sm:mb-5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-700 flex items-center justify-center">
+                <Factory className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
 
               <div>
-                <h2 className="text-xl font-bold text-slate-900">
+                <h2 className="text-lg sm:text-xl font-bold text-slate-900">
                   Sarthak Industries
                 </h2>
 
-                <p className="text-xs text-slate-500">
+                <p className="text-[11px] sm:text-xs text-slate-500">
                   Chemical Manufacturing
                 </p>
               </div>
             </div>
 
-            <p className="text-slate-600 leading-7">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               A professional chemical manufacturing business
               focused on quality, reliability and industrial
               requirements.
             </p>
 
             {/* Social Media */}
-            <div className="flex gap-3 mt-6">
+            <div className="flex gap-3 mt-5 sm:mt-6">
               <a
                 href="#"
-                className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition"
                 aria-label="LinkedIn"
               >
-                <LinkedinIcon className="w-5 h-5" />
+                <LinkedinIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
 
               <a
                 href="#"
-                className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition"
                 aria-label="Instagram"
               >
-                <InstagramIcon className="w-5 h-5" />
+                <InstagramIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-slate-900">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-slate-900">
               Quick Links
             </h3>
 
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href="#home"
-                  className="text-slate-600 hover:text-blue-700 transition"
-                >
-                  Home
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#about"
-                  className="text-slate-600 hover:text-blue-700 transition"
-                >
-                  About Us
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#product"
-                  className="text-slate-600 hover:text-blue-700 transition"
-                >
-                  Products
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#applications"
-                  className="text-slate-600 hover:text-blue-700 transition"
-                >
-                  Applications
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#quality"
-                  className="text-slate-600 hover:text-blue-700 transition"
-                >
-                  Quality
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#contact"
-                  className="text-slate-600 hover:text-blue-700 transition"
-                >
-                  Contact
-                </a>
-              </li>
+            <ul className="space-y-3 sm:space-y-4">
+              {[
+                ["#home", "Home"],
+                ["#about", "About Us"],
+                ["#product", "Products"],
+                ["#applications", "Applications"],
+                ["#quality", "Quality"],
+                ["#contact", "Contact"],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-700 transition"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-slate-900">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-slate-900">
               Our Products
             </h3>
 
-            <ul className="space-y-4">
-              <li className="text-slate-600">
+            <ul className="space-y-3 sm:space-y-4">
+              <li className="text-xs sm:text-sm text-slate-600">
                 Acidic Sylric
               </li>
-
-              <li className="text-slate-600">
+              <li className="text-xs sm:text-sm text-slate-600">
                 Industrial Chemicals
               </li>
-
-              <li className="text-slate-600">
+              <li className="text-xs sm:text-sm text-slate-600">
                 Chemical Solutions
               </li>
-
-              <li className="text-slate-600">
+              <li className="text-xs sm:text-sm text-slate-600">
                 Custom Requirements
               </li>
             </ul>
@@ -177,37 +138,34 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-6 text-slate-900">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-slate-900">
               Contact Us
             </h3>
 
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
 
-              <div className="flex gap-3">
-                <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-1" />
-
-                <p className="text-slate-600">
+              <div className="flex gap-3 items-start">
+                <MapPin className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-blue-600 shrink-0 mt-1" />
+                <p className="text-xs sm:text-sm text-slate-600">
                   Gujarat, India
                 </p>
               </div>
 
-              <div className="flex gap-3">
-                <Phone className="w-5 h-5 text-blue-600 shrink-0" />
-
+              <div className="flex gap-3 items-center">
+                <Phone className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-blue-600 shrink-0" />
                 <a
                   href="tel:+91XXXXXXXXXX"
-                  className="text-slate-600 hover:text-blue-700 transition"
+                  className="text-xs sm:text-sm text-slate-600 hover:text-blue-700 transition"
                 >
                   +91 XXXXX XXXXX
                 </a>
               </div>
 
-              <div className="flex gap-3">
-                <Mail className="w-5 h-5 text-blue-600 shrink-0" />
-
+              <div className="flex gap-3 items-center">
+                <Mail className="w-4 h-4 sm:w-[18px] sm:h-[18px] text-blue-600 shrink-0" />
                 <a
                   href="mailto:info@sarthakindustries.com"
-                  className="text-slate-600 hover:text-blue-700 transition break-all"
+                  className="text-xs sm:text-sm text-slate-600 hover:text-blue-700 transition break-all sm:break-normal"
                 >
                   info@sarthakindustries.com
                 </a>
@@ -221,36 +179,36 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
 
-            <p className="text-sm text-slate-500 text-center md:text-left">
+            <p className="text-xs sm:text-sm text-slate-500 text-center md:text-left">
               © {new Date().getFullYear()} Sarthak Industries.
               All rights reserved.
             </p>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 sm:gap-6">
 
               <a
                 href="#"
-                className="text-sm text-slate-500 hover:text-blue-700 transition"
+                className="text-xs sm:text-sm text-slate-500 hover:text-blue-700 transition"
               >
                 Privacy Policy
               </a>
 
               <a
                 href="#"
-                className="text-sm text-slate-500 hover:text-blue-700 transition"
+                className="text-xs sm:text-sm text-slate-500 hover:text-blue-700 transition"
               >
                 Terms & Conditions
               </a>
 
               <button
                 onClick={scrollToTop}
-                className="w-10 h-10 rounded-lg bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition"
                 aria-label="Back to top"
               >
-                <ArrowUp className="w-5 h-5" />
+                <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
 
             </div>
@@ -263,4 +221,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
