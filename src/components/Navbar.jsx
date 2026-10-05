@@ -107,7 +107,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
+        {/* <AnimatePresence> */}
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
@@ -137,7 +137,7 @@ const Navbar = () => {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
       </div>
     </motion.nav>
   );
