@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const SectionTitle = ({
   subtitle,
   title,
@@ -6,7 +8,11 @@ const SectionTitle = ({
   center = false,
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`
         ${center ? "mx-auto text-center" : ""}
         max-w-3xl
@@ -17,8 +23,12 @@ const SectionTitle = ({
           center ? "justify-center" : ""
         }`}
       >
-        <span
-          className={`h-[2px] w-6 sm:w-8 ${
+        <motion.span
+          initial={{ width: 0 }}
+          whileInView={{ width: 32 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className={`h-[2px] ${
             light ? "bg-blue-400" : "bg-blue-700"
           }`}
         />
@@ -49,7 +59,7 @@ const SectionTitle = ({
           {description}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 };
 

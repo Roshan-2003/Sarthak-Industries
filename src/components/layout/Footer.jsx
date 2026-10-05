@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Factory,
   Mail,
@@ -37,16 +38,22 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white text-slate-900 border-t border-slate-200">
+    <footer className="bg-white text-slate-900 border-t border-slate-200 overflow-hidden">
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
 
           {/* Company */}
           <div>
             <div className="flex items-center gap-3 mb-4 sm:mb-5">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-700 flex items-center justify-center">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-700 flex items-center justify-center shadow-md shadow-blue-700/20">
                 <Factory className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
 
@@ -69,21 +76,25 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="flex gap-3 mt-5 sm:mt-6">
-              <a
+              <motion.a
+                whileHover={{ y: -3, scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
                 href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-colors shadow-sm"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ y: -3, scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
                 href="#"
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-colors shadow-sm"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -105,7 +116,7 @@ const Footer = () => {
                 <li key={href}>
                   <a
                     href={href}
-                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-700 transition"
+                    className="text-xs sm:text-sm text-slate-600 hover:text-blue-700 transition-colors hover:underline"
                   >
                     {label}
                   </a>
@@ -175,7 +186,7 @@ const Footer = () => {
           </div>
 
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom Footer */}
       <div className="border-t border-slate-200">
@@ -203,13 +214,15 @@ const Footer = () => {
                 Terms & Conditions
               </a>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={scrollToTop}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition shadow-md shadow-blue-700/20"
                 aria-label="Back to top"
               >
                 <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
-              </button>
+              </motion.button>
 
             </div>
           </div>

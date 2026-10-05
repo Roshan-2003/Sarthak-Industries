@@ -1,3 +1,5 @@
+import ScrollProgress from "./components/common/ScrollProgress";
+import ScrollToTop from "./components/common/ScrollToTop";
 import About from "./components/home/About";
 import Applications from "./components/home/Applications";
 import Benefits from "./components/home/Benefits";
@@ -11,9 +13,14 @@ import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      <Navbar/>
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-600 selection:text-white">
+      {/* Top Scroll Reading Indicator Bar */}
+      <ScrollProgress />
 
+      {/* Navigation Header */}
+      <Navbar />
+
+      {/* Main Page Content */}
       <main>
         <Hero />
 
@@ -32,8 +39,11 @@ const App = () => {
         <Contact />
       </main>
 
+      {/* Footer */}
       <Footer />
 
+      {/* Floating Action Scroll-To-Top Button */}
+      <ScrollToTop />
     </div>
   );
 };
